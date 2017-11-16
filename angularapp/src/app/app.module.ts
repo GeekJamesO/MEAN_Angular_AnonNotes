@@ -7,6 +7,7 @@ import { NotesComponent } from './notes/notes.component';
 
 import { FormsModule } from "@angular/forms";
 import { HttpModule } from  "@angular/http";
+import { NotesService } from './notes.service';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import { HttpModule } from  "@angular/http";
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

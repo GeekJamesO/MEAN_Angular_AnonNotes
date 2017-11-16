@@ -6,11 +6,11 @@
         <form (submit)="onSubmit()">
             <div class="inputdiv">
                 <label for="newnotestring">Note:</label>
-                <input type="text" required name="newnotestring" minlength="3" maxlength="10000" placeholder="Enter note here" />
-                <input class="green" type="submit" value="Add Note" />
+                <input type="text" required name="text" minlength="3" maxlength="10000" placeholder="Enter note here" [(ngModel)]="note.text" #text="ngModel" />
+                <input class="green" type="submit" value="Add Note" [disabled]="!text.valid" />
             </div>
         </form>
-
+        {{note | json}}
         <div class="displayNotes">
             <div class="SingleNote"></div>
             //*ngFor='var note'

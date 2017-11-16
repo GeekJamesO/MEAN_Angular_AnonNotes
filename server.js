@@ -6,6 +6,7 @@ const path = require('path')
 const port = 8000
 
 app.use(express.static(path.join(__dirname, "/angularapp/dist")))
+app.use(bp.urlencoded({ extends: true }));
 app.use(bp.json())
 
 require("./config/mongoose")
